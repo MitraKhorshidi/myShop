@@ -11,6 +11,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,7 +34,9 @@ import { ProductsHeaderComponent } from './pages/home/components/products-header
     MatBadgeModule,
     MatMenuModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
