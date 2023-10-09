@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  category:string = 'z';
   colsCount :number = 3;
 
   onCoulumsCountChange(newColsCount:number){
     this.colsCount = newColsCount;
+  }
+
+  onChangeCategory(newCategory:string):void{
+    this.category=newCategory;
   }
 
 }
