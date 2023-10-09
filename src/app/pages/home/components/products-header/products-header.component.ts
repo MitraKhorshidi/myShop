@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-products-header',
@@ -7,15 +7,19 @@ import { Component } from '@angular/core';
 })
 export class ProductsHeaderComponent {
 
-  sort : string = 'asc';
-  itemsShowCount : number = 12 ;
+  @Output() coulumsCountChange = new EventEmitter<number>()
+  sort: string = 'asc';
+  itemsShowCount: number = 12;
 
-  onSortChange(newSort:string):void{
-    this.sort=newSort;
+  onSortChange(newSort: string): void {
+    this.sort = newSort;
   }
 
-  onShowCountChange(newCount:number):void{
-    this.itemsShowCount=newCount
+  onShowCountChange(newCount: number): void {
+    this.itemsShowCount = newCount
+  }
+  onCoulumsCountChange(newColsCount: number): void {
+    this.coulumsCountChange.emit(newColsCount);
   }
 
 }

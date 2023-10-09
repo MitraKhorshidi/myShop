@@ -1,8 +1,10 @@
 <mat-drawer-container class="min-h-screen">
-    <mat-drawer mode="side" opened class="p-6">
-        <div>filters</div>
-    </mat-drawer>
-    <mat-drawer-content class="p-6">
-        <app-products-header></app-products-header>
-    </mat-drawer-content>
+  <mat-drawer mode="side" opened class="p-6">
+    <div>filters</div>
+  </mat-drawer>
+  <mat-drawer-content class="p-6">
+    <app-products-header
+      (coulumsCountChange)="onCoulumsCountChange($event)"
+    ></app-products-header>
+  </mat-drawer-content>
 </mat-drawer-container>

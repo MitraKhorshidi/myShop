@@ -13,7 +13,7 @@
       <button mat-menu-item (click)="onSortChange('desc')">desc</button>
     </mat-menu>
 
-    <div class="flex flex-row justify-center">
+    <div class="flex flex-row justify-center gap-3">
       <button
         [matMenuTriggerFor]="showMenu"
         mat-button
@@ -34,15 +34,17 @@
         </button>
       </mat-menu>
 
-      <button mat-button>
-        <mat-icon>view_list</mat-icon>
-      </button>
-      <button mat-button>
-        <mat-icon>view_module</mat-icon>
-      </button>
-      <button mat-button>
-        <mat-icon>view_comfy</mat-icon>
-      </button>
+      <div>
+        <button (click)="onCoulumsCountChange(1)" mat-button>
+          <mat-icon>view_list</mat-icon>
+        </button>
+        <button (click)="onCoulumsCountChange(3)" mat-button>
+          <mat-icon>view_module</mat-icon>
+        </button>
+        <button (click)="onCoulumsCountChange(4)" mat-button>
+          <mat-icon>view_comfy</mat-icon>
+        </button>
+      </div>
     </div>
   </mat-card-actions>
 </mat-card>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  colsCount :number = 3;
+
+  onCoulumsCountChange(newColsCount:number){
+    this.colsCount = newColsCount;
+  }
+
 }
