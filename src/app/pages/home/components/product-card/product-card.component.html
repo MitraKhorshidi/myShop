@@ -1,0 +1,23 @@
+<mat-card>
+  <div
+    class="flex gap-3 p-5"
+    [ngClass]="
+      fullWidthMode
+        ? 'flex-row justify-start gap-x-20'
+        : 'flex-col items-center'
+    "
+  >
+    <img src="https://placehold.co/150" alt="pic" class="w-[200px]" />
+    <div class="flex flex-col justify-center">
+      <p>Category</p>
+      <p class="text-lg">Product</p>
+      <p *ngIf="fullWidthMode">
+        description dbebi euihviuehv uiviev ueqhvieqv uiguowo.
+      </p>
+    </div>
+    <div class="flex flex-row gap-24 items-center">
+      <p>{{ 150 | currency : "EUR" }}</p>
+      <button mat-button><mat-icon>shopping_cart</mat-icon></button>
+    </div>
+  </div>
+</mat-card>
