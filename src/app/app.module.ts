@@ -14,6 +14,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { HeaderComponent } from './components/header/header.component';
@@ -46,6 +48,8 @@ import { CartComponent } from './pages/cart/cart.component';
     MatExpansionModule,
     MatListModule,
     MatGridListModule,
+    MatTableModule,
+    MatButtonModule,
 
   ],
   providers: [],
