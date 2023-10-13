@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-home',
@@ -17,5 +18,6 @@ export class HomeComponent {
   onChangeCategory(newCategory:string):void{
     this.category=newCategory;
   }
+  onAddToCart(product:Product):void{}
 
 }
