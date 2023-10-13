@@ -16,8 +16,8 @@
       </p>
     </div>
     <div class="flex flex-row gap-24 items-center">
-      <p>{{ 150 | currency : "EUR" }}</p>
-      <button mat-button><mat-icon>shopping_cart</mat-icon></button>
+      <span>{{ 150 | currency : "EUR" }}</span>
+      <button (click)="onAddToCart()" mat-mini-fab color="primary"><mat-icon>shopping_cart</mat-icon></button>
     </div>
   </div>
 </mat-card>
