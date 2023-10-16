@@ -34,8 +34,27 @@ export class CartService {
     return items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
   }
 
-  onClearCart(): void {
+  clearCart(): void {
     this.cart.next({ items: [] });
     this.snackBar.open('Cart is cleared!', 'OK', { duration: 2000 })
+  }
+
+  removeFromCart(item: CartItem): void {
+    const filteredItems = this.cart.value.items.filter((it) => it.id !== item.id);
+    this.cart.next({ items: filteredItems });
+    this.snackBar.open('One item is removed from the cart!', 'Ok', { duration: 2000 });
+  }
+
+  removeQuantity(item: CartItem): void {
+    const filteredItems = this.cart.value.items
+      .map((it) => {
+        if (it.id === item.id) {
+          it.quantity -= 1;
+        }
+        return item;
+      })
+      .filter((it) => it.quantity>0);
+    
+      this.cart.next({items:filteredItems});
   }
 }
