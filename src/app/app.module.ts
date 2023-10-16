@@ -16,6 +16,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { HeaderComponent } from './components/header/header.component';
@@ -50,6 +51,7 @@ import { CartComponent } from './pages/cart/cart.component';
     MatGridListModule,
     MatTableModule,
     MatButtonModule,
+    MatSnackBarModule,
 
   ],
   providers: [],

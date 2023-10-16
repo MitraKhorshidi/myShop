@@ -9,7 +9,7 @@ import { Product } from 'src/app/models/product.model';
 export class ProductCardComponent {
 
   @Input() fullWidthMode : boolean = false;
-  @Output() addtoCart = new EventEmitter<Product>;
+  @Output() addtoCart = new EventEmitter<Product>();
   product :Product ={
     id:1,
     title:'Skeatures',
