@@ -12,8 +12,9 @@
       gutterSize="16"
       class="mx-auto my-10"
     >
-      <mat-grid-tile>
+      <mat-grid-tile *ngFor="let product of products">
         <app-product-card
+        [product]="product"
           (addtoCart)="onAddToCart($event)"
           class="w-full"
           [fullWidthMode]="colsCount === 1"

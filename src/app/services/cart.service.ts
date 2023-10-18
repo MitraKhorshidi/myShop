@@ -40,8 +40,9 @@ export class CartService {
   }
 
   removeFromCart(item: CartItem): void {
-    const filteredItems = this.cart.value.items.filter((it) => it.id !== item.id);
+    const filteredItems =this.cart.value.items.filter((it) => it.id != item.id);
     this.cart.next({ items: filteredItems });
+    console.log('filter',filteredItems)
     this.snackBar.open('One item is removed from the cart!', 'Ok', { duration: 2000 });
   }
 

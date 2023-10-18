@@ -9,16 +9,8 @@ import { Product } from 'src/app/models/product.model';
 export class ProductCardComponent {
 
   @Input() fullWidthMode : boolean = false;
+  @Input() product? : Product ;
   @Output() addtoCart = new EventEmitter<Product>();
-  product :Product ={
-    id:1,
-    title:'Skeatures',
-    price: 150,
-    category: 'shoes',
-    description:'Some desc for the product',
-    image:"https://placehold.co/150",
-
-  }
 
   onAddToCart():void{
     this.addtoCart.emit(this.product);

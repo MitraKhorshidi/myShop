@@ -11,7 +11,6 @@ export class CartComponent implements OnInit {
 
   cart: Cart = { items: [] };
 
-  dataSource: Array<CartItem> = []
   columnsToDisplay: Array<string> = [
     'product', 'name', 'price', 'quantity', 'total', 'action'
   ]
@@ -20,7 +19,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.cart.subscribe((next) => this.cart = next);
-    this.dataSource = this.cart.items;
   }
 
   getTotal(): number {
