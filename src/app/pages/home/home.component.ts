@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   colsCount: number = 3;
   products: Array<Product> = [];
   limit: number = 12;
-  sort: string = 'desc';
+  sort: string = 'asc';
   productSubscription?: Subscription;
 
   constructor(private catServive: CartService, private storeService: StoreService) { }
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getProducts(): void {
-    this.productSubscription = this.storeService.getAllProducts(this.limit, this.sort)
+    this.productSubscription = this.storeService.getAllProducts(this.limit, this.sort , this.category)
       .subscribe((next) => this.products = next);
   }
 
@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onChangeCategory(newCategory: string): void {
     this.category = newCategory;
+    this.getProducts();
   }
   onAddToCart(product: Product): void {
     this.catServive.addToCart({
@@ -44,6 +45,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       price: product.price,
       quantity: 1
     });
+  }
+
+  onLimitChange(newLimit:number):void{
+    this.limit=newLimit;
+    this.getProducts();
+  }
+
+  onSortChange(newSort:string):void{
+    this.sort=newSort;
+    this.getProducts();
   }
 
   ngOnDestroy(): void {

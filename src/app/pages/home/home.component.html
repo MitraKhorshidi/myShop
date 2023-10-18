@@ -1,10 +1,12 @@
 <mat-drawer-container class="min-h-screen max-w-7xl mx-auto">
-  <mat-drawer mode="side" opened class="p-6">
+  <mat-drawer mode="side" opened class="p-3 w-1/4">
     <app-filters (changeCategory)="onChangeCategory($event)"></app-filters>
   </mat-drawer>
   <mat-drawer-content class="p-6">
     <app-products-header
       (coulumsCountChange)="onCoulumsCountChange($event)"
+      (countChange)="onLimitChange($event)"
+      (sortChange)="onSortChange($event)"
     ></app-products-header>
     <mat-grid-list
       [cols]="colsCount"
